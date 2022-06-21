@@ -1,15 +1,35 @@
 <html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
 
-<head>
-	<title>Parcel Sandbox</title>
-	<meta charset="UTF-8" />
-</head>
+  <body>
+    <h1>Calculadora de matrices</h1>
+    <h3>Puede ingresar dos matrices</h3>
+    <button id="cargarMatrizA">Cargar Matriz A</button>
+    <button id="cargarMatrizB">Cargar Matriz B</button>
+    <button id="intercambio">Intercambiar matrices</button>
+    <br />
 
-<body>
-	<div id="app"></div>
+    <select id="opcionCalculo">
+      <option value="1">Sumar matrices</option>
+      <option value="2">Multiplicar por un escalar</option>
+      <option value="3">Multiplicar matrices</option>
+      <option value="4">Calcular determinante</option>
+      <option value="5">¿Son de igual dimensión?</option>
+      <option value="6">¿Son iguales?</option>
+      <option value="7">¿Es cuadrada?</option>
+      <option value="8">¿Es la matriz identidad?</option>
+    </select>
+    <button id="hacerCalculo">Calcular</button>
 
-	<script src="src/index.ts">
-	</script>
-</body>
+    <br />
 
+    <h3>Resultado:</h3>
+
+    <div id="mostrarResultado"></div>
+
+    <script src="src/index.ts"></script>
+  </body>
 </html>

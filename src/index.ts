@@ -89,25 +89,48 @@ function sumarMatrices(A: number[][], B: number[][]): number[][] {
   return matrixResultado;
 }
 
-let tamanoFilaA: number;
-let tamanoColumnaA: number;
-let matrizA: number[][];
-//tamanoFilaA = pedirTamano();
-//tamanoColumnaA = pedirTamano();
-//matrizA = crearMatriz(tamanoFilaA, tamanoColumnaA);
+function matrizXEscalar(A: number[], escalar: number): number[][] {
+  let matrixResultado: number[][];
+  matrixResultado = crearMatriz(A.length, A[0].length);
+  for (let i: number = 0; i < A.length; i++) {
+    for (let j: number = 0; j < A[0].length; j++) {
+      matrixResultado[i][j] = A[i][j] * escalar;
+    }
+  }
+  return matrixResultado;
+}
 
-let tamanoFilaB: number;
-let tamanoColumnaB: number;
-let matrizB: number[][];
-// tamanoFilaB = pedirTamano();
-// tamanoColumnaB = pedirTamano();
-// matrizB = crearMatriz(tamanoFilaB, tamanoColumnaB);
+let botonCreaMatrizA = document.getElementById("");
 
-let matrizResultado: number[][];
+botonCreaMatrizA?.addEventListener("click", () => {
+  let tamanoFilaA: number;
+  let tamanoColumnaA: number;
+  let matrizA: number[][];
+  tamanoFilaA = pedirTamano();
+  tamanoColumnaA = pedirTamano();
+  matrizA = crearMatriz(tamanoFilaA, tamanoColumnaA);
+  cargarMatriz(matrizA, tamanoFilaA, tamanoColumnaA);
+});
 
-// console.clear();
-cargarMatriz(matrizA, tamanoFilaA, tamanoColumnaA);
-// //cargarMatriz(matrizB, tamanoFilaB, tamanoColumnaB);
+let botonCreaMatrizB = document.getElementById("");
+
+botonCreaMatrizB?.addEventListener("click", () => {
+  let tamanoFilaB: number;
+  let tamanoColumnaB: number;
+  let matrizB: number[][];
+  tamanoFilaB = pedirTamano();
+  tamanoColumnaB = pedirTamano();
+  matrizB = crearMatriz(tamanoFilaB, tamanoColumnaB);
+  cargarMatriz(matrizB, tamanoFilaB, tamanoColumnaB);
+});
+
+let botonCreaMatrizResultado = document.getElementById("");
+
+botonCreaMatrizResultado?.addEventListener("click", () => {
+  let matrizResultado: number[][];
+});
+
+console.clear();
 
 // //comprobarMatrices(matrizA, matrizB);
 
@@ -117,6 +140,7 @@ cargarMatriz(matrizA, tamanoFilaA, tamanoColumnaA);
 
 //pedir el numero, si el numero es correcto asignarlo a la variable. LISTO
 //crear funcion sumar matrices y devolver resultado. LISTO
-//crear funcion multiplicar por escalar
+//crear funcion multiplicar por escalar LISTO
 //crear funcion buscar inversa
 //crear funcion calcular determinante
+//cambiar de lugar las matrices cargadas
